@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<link type="text/css" rel="stylesheet" href="../CSS/configuration_page.css">
+<body>
+	<p id="title">Set Up Client</p>
+	<div id="ip-place" class="input-place">
+		<p>IP</p>
+		<input type="text" id="ip-input" class="input-field" placeholder="Enter IP Server">
+	</div>
+
+	<div id="port-place" class="input-place">
+		<p>Port</p>
+		<input type="text" id="port-input" class="input-field" placeholder="Enter Port Server">
+	</div>
+
+	<div id="user-place" class="input-place">
+		<p>Team Name</p>
+		<input type="text" id="username-input" class="input-field" placeholder="Enter User Name">
+	</div>
+
+	<div style="display: inline-block;float:right;margin-right: 20px;margin-top: 10px;">
+		<button type="button" id="close-btt" class="control-btt" onclick="closeWindow()">Close</button>
+		<button type="button" id="next-btt" class="control-btt" onclick="confirm()">Next</button>
+	</div>
+
+	<script src="../JS/configuration_page.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
