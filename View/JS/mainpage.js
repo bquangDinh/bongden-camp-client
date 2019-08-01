@@ -31,6 +31,9 @@ var receiveSignal = {
   ID:"3"
 }
 
+var audio = document.getElementById("sound-alarm");
+var audio_playing = false;
+
 const {ipcRenderer} = require('electron');
 
 ipcRenderer.on('init-client',(events,arg) => {
@@ -56,6 +59,17 @@ client.eventEmitter.on('send-abroad',function(data){
     case receiveSignal.GOIY:
     console.log(value);
     $("#mess-content").text(value);
+    if(audio_playing == false){
+      audio_playing = true;
+      audio.play();
+      $("#mess-container").css("background","#e74c3c");
+      $("#mess-container > *").css("color","white");
+      setTimeout(function(){
+        $("#mess-container").css("background","#ecf0f1");
+        $("#mess-container > *").css("color","#333333");
+        audio_playing = false;
+      },1500);
+    }
     break;
 
     case receiveSignal.SCORE:
